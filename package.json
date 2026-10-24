@@ -1,0 +1,12 @@
+{
+  "name": "pyqanalyzer-noodles",
+  "version": "1.0.0",
+  "description": "AI-powered Previous Year Questions (PYQ) Analysis System",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix noods run dev",
+    "build": "npm --prefix noods run build",
+    "lint": "npm --prefix noods run lint",
+    "preview": "npm --prefix noods run preview"
+  }
+}
