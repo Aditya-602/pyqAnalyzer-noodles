@@ -52,3 +52,4 @@ npm run dev
 3. Describe the problem your PR solves and what changes you made.
 
 Thank you for helping make studying smarter for everyone!
+
