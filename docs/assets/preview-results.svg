@@ -1,11 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" width="100%" height="100%">
   <defs>
+    <!-- Dark Background -->
     <linearGradient id="resBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0e17"/>
-      <stop offset="100%" stop-color="#020617"/>
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#08080a"/>
+    </linearGradient>
+    <linearGradient id="docBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0f14"/>
+      <stop offset="100%" stop-color="#08090c"/>
     </linearGradient>
     <filter id="docShadow" x="-10%" y="-5%" width="120%" height="115%">
-      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.9"/>
     </filter>
   </defs>
 
@@ -15,100 +20,112 @@
   </style>
 
   <!-- Dark Canvas -->
-  <rect width="1000" height="640" fill="url(#resBg)"/>
+  <rect width="1000" height="660" fill="url(#resBg)"/>
 
-  <!-- Back floating pill -->
+  <!-- Back floating pill (Monochrome) -->
   <g transform="translate(60, 24)">
-    <rect width="88" height="34" rx="17" fill="#ffffff" fill-opacity="0.1" stroke="#ffffff" stroke-opacity="0.15"/>
-    <text x="44" y="22" fill="#ffffff" font-size="12" font-weight="500" class="font-sans" text-anchor="middle">← Back</text>
+    <rect width="84" height="32" rx="16" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="42" y="21" fill="#ffffff" font-size="12" font-weight="500" class="font-sans" text-anchor="middle">← Back</text>
   </g>
 
-  <!-- A4 Document Container -->
+  <!-- Dark Mode Report Document Container -->
   <g transform="translate(140, 24)" filter="url(#docShadow)">
-    <rect width="720" height="592" rx="12" fill="#ffffff"/>
+    <rect width="720" height="610" rx="14" fill="url(#docBg)" stroke="#ffffff" stroke-opacity="0.12"/>
 
     <!-- Document Header -->
-    <g transform="translate(48, 48)">
-      <text x="312" y="24" fill="#0f172a" font-size="24" font-weight="800" class="font-sans" text-anchor="middle">
+    <g transform="translate(48, 44)">
+      <text x="312" y="24" fill="#ffffff" font-size="24" font-weight="800" class="font-sans" text-anchor="middle">
         PYQ Analysis &amp; Revision Report
       </text>
-      <text x="312" y="46" fill="#64748b" font-size="12" class="font-sans" text-anchor="middle">
+      <text x="312" y="46" fill="#71717a" font-size="12" class="font-sans" text-anchor="middle">
         AI Evaluation • Generated via Gemini 2.5 Flash
       </text>
-      <line x1="20" y1="62" x2="604" y2="62" stroke="#e2e8f0" stroke-width="1.5"/>
+      <line x1="20" y1="62" x2="604" y2="62" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
     </g>
 
-    <!-- 3 Stat Metrics -->
-    <g transform="translate(68, 128)">
+    <!-- 3 Stat Metrics (Dark Card with selective Accent) -->
+    <g transform="translate(68, 126)">
       <!-- Stat 1 -->
       <g transform="translate(0, 0)">
-        <rect width="180" height="70" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
-        <text x="90" y="34" fill="#2563eb" font-size="24" font-weight="800" class="font-sans" text-anchor="middle">48</text>
-        <text x="90" y="54" fill="#64748b" font-size="11" class="font-sans" text-anchor="middle">Questions Parsed</text>
+        <rect width="180" height="68" rx="8" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.08"/>
+        <text x="90" y="34" fill="#ffffff" font-size="24" font-weight="800" class="font-sans" text-anchor="middle">48</text>
+        <text x="90" y="52" fill="#71717a" font-size="11" class="font-sans" text-anchor="middle">Questions Parsed</text>
       </g>
       <!-- Stat 2 -->
       <g transform="translate(202, 0)">
-        <rect width="180" height="70" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
-        <text x="90" y="34" fill="#7c3aed" font-size="24" font-weight="800" class="font-sans" text-anchor="middle">12</text>
-        <text x="90" y="54" fill="#64748b" font-size="11" class="font-sans" text-anchor="middle">Topics Identified</text>
+        <rect width="180" height="68" rx="8" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.08"/>
+        <text x="90" y="34" fill="#f4f4f5" font-size="24" font-weight="800" class="font-sans" text-anchor="middle">12</text>
+        <text x="90" y="52" fill="#71717a" font-size="11" class="font-sans" text-anchor="middle">Topics Identified</text>
       </g>
-      <!-- Stat 3 -->
+      <!-- Stat 3 (Red Accent for High Priority) -->
       <g transform="translate(404, 0)">
-        <rect width="180" height="70" rx="8" fill="#fef2f2" stroke="#fee2e2"/>
-        <text x="90" y="34" fill="#dc2626" font-size="24" font-weight="800" class="font-sans" text-anchor="middle">4</text>
-        <text x="90" y="54" fill="#991b1b" font-size="11" class="font-sans" text-anchor="middle">High Priority Topics</text>
+        <rect width="180" height="68" rx="8" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-opacity="0.25"/>
+        <text x="90" y="34" fill="#f87171" font-size="24" font-weight="800" class="font-sans" text-anchor="middle">4</text>
+        <text x="90" y="52" fill="#fca5a5" font-size="11" class="font-sans" text-anchor="middle">High Priority Topics</text>
       </g>
+    </g>
+
+    <!-- Focus Areas Section (Emerald Green Accent) -->
+    <g transform="translate(68, 206)">
+      <rect width="584" height="48" rx="8" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-opacity="0.25"/>
+      <text x="16" y="29" fill="#34d399" font-size="12" font-weight="700" class="font-sans">⚡ Key Focus Areas:</text>
+      <rect x="140" y="12" width="135" height="24" rx="12" fill="#10b981" fill-opacity="0.18"/>
+      <text x="207" y="28" fill="#6ee7b7" font-size="11" font-weight="600" class="font-sans" text-anchor="middle">Dynamic Programming</text>
+      <rect x="285" y="12" width="90" height="24" rx="12" fill="#10b981" fill-opacity="0.18"/>
+      <text x="330" y="28" fill="#6ee7b7" font-size="11" font-weight="600" class="font-sans" text-anchor="middle">AVL Trees</text>
+      <rect x="385" y="12" width="105" height="24" rx="12" fill="#10b981" fill-opacity="0.18"/>
+      <text x="437" y="28" fill="#6ee7b7" font-size="11" font-weight="600" class="font-sans" text-anchor="middle">Shortest Paths</text>
     </g>
 
     <!-- Topic Frequency Breakdown Section -->
-    <g transform="translate(68, 222)">
-      <text x="0" y="16" fill="#0f172a" font-size="15" font-weight="700" class="font-sans">
+    <g transform="translate(68, 270)">
+      <text x="0" y="16" fill="#ffffff" font-size="14" font-weight="700" class="font-sans">
         🎯 Identified Topics &amp; Exam Weightage
       </text>
 
-      <!-- Topic Row 1 -->
-      <g transform="translate(0, 28)">
-        <rect width="584" height="42" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <!-- Topic Row 1 (Very Important - Red/Coral) -->
+      <g transform="translate(0, 26)">
+        <rect width="584" height="42" rx="6" fill="#ffffff" fill-opacity="0.02" stroke="#ffffff" stroke-opacity="0.08"/>
         <text x="14" y="26" font-size="13">🔥</text>
-        <text x="36" y="26" fill="#0f172a" font-size="13" font-weight="600" class="font-sans">Dynamic Programming (Knapsack, LCS)</text>
-        <rect x="420" y="10" width="60" height="22" rx="11" fill="#fef2f2"/>
-        <text x="450" y="25" fill="#dc2626" font-size="10" font-weight="700" class="font-sans" text-anchor="middle">9x Asked</text>
-        <rect x="488" y="10" width="86" height="22" rx="11" fill="#fee2e2"/>
-        <text x="531" y="25" fill="#b91c1c" font-size="10" font-weight="700" class="font-sans" text-anchor="middle">Very Important</text>
+        <text x="36" y="26" fill="#ffffff" font-size="13" font-weight="600" class="font-sans">Dynamic Programming (Knapsack, LCS)</text>
+        <rect x="420" y="10" width="58" height="22" rx="11" fill="#ffffff" fill-opacity="0.08"/>
+        <text x="449" y="25" fill="#f4f4f5" font-size="10" font-weight="700" class="font-sans" text-anchor="middle">9x Asked</text>
+        <rect x="488" y="10" width="86" height="22" rx="11" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-opacity="0.3"/>
+        <text x="531" y="25" fill="#f87171" font-size="10" font-weight="700" class="font-sans" text-anchor="middle">Very Important</text>
       </g>
 
-      <!-- Topic Row 2 -->
-      <g transform="translate(0, 78)">
-        <rect width="584" height="42" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <!-- Topic Row 2 (Very Important - Red/Coral) -->
+      <g transform="translate(0, 74)">
+        <rect width="584" height="42" rx="6" fill="#ffffff" fill-opacity="0.02" stroke="#ffffff" stroke-opacity="0.08"/>
         <text x="14" y="26" font-size="13">🔥</text>
-        <text x="36" y="26" fill="#0f172a" font-size="13" font-weight="600" class="font-sans">AVL Trees &amp; Tree Rotations (LL, RR, LR, RL)</text>
-        <rect x="420" y="10" width="60" height="22" rx="11" fill="#fef2f2"/>
-        <text x="450" y="25" fill="#dc2626" font-size="10" font-weight="700" class="font-sans" text-anchor="middle">7x Asked</text>
-        <rect x="488" y="10" width="86" height="22" rx="11" fill="#fee2e2"/>
-        <text x="531" y="25" fill="#b91c1c" font-size="10" font-weight="700" class="font-sans" text-anchor="middle">Very Important</text>
+        <text x="36" y="26" fill="#ffffff" font-size="13" font-weight="600" class="font-sans">AVL Trees &amp; Tree Rotations (LL, RR, LR, RL)</text>
+        <rect x="420" y="10" width="58" height="22" rx="11" fill="#ffffff" fill-opacity="0.08"/>
+        <text x="449" y="25" fill="#f4f4f5" font-size="10" font-weight="700" class="font-sans" text-anchor="middle">7x Asked</text>
+        <rect x="488" y="10" width="86" height="22" rx="11" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-opacity="0.3"/>
+        <text x="531" y="25" fill="#f87171" font-size="10" font-weight="700" class="font-sans" text-anchor="middle">Very Important</text>
       </g>
 
-      <!-- Topic Row 3 -->
-      <g transform="translate(0, 128)">
-        <rect width="584" height="42" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <!-- Topic Row 3 (Important - Amber) -->
+      <g transform="translate(0, 122)">
+        <rect width="584" height="42" rx="6" fill="#ffffff" fill-opacity="0.02" stroke="#ffffff" stroke-opacity="0.08"/>
         <text x="14" y="26" font-size="13">⭐</text>
-        <text x="36" y="26" fill="#0f172a" font-size="13" font-weight="600" class="font-sans">Graph Shortest Paths (Dijkstra vs Bellman-Ford)</text>
-        <rect x="420" y="10" width="60" height="22" rx="11" fill="#fefce8"/>
-        <text x="450" y="25" fill="#ca8a04" font-size="10" font-weight="700" class="font-sans" text-anchor="middle">5x Asked</text>
-        <rect x="488" y="10" width="86" height="22" rx="11" fill="#fef08a"/>
-        <text x="531" y="25" fill="#854d0e" font-size="10" font-weight="700" class="font-sans" text-anchor="middle">Important</text>
+        <text x="36" y="26" fill="#ffffff" font-size="13" font-weight="600" class="font-sans">Graph Shortest Paths (Dijkstra vs Bellman-Ford)</text>
+        <rect x="420" y="10" width="58" height="22" rx="11" fill="#ffffff" fill-opacity="0.08"/>
+        <text x="449" y="25" fill="#f4f4f5" font-size="10" font-weight="700" class="font-sans" text-anchor="middle">5x Asked</text>
+        <rect x="488" y="10" width="86" height="22" rx="11" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-opacity="0.3"/>
+        <text x="531" y="25" fill="#fbbf24" font-size="10" font-weight="700" class="font-sans" text-anchor="middle">Important</text>
       </g>
     </g>
 
-    <!-- Revision Notes Card -->
-    <g transform="translate(68, 412)">
-      <rect width="584" height="135" rx="8" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <!-- Revision Notes Card (Dark Card with Emerald Tip) -->
+    <g transform="translate(68, 452)">
+      <rect width="584" height="135" rx="8" fill="#ffffff" fill-opacity="0.02" stroke="#ffffff" stroke-opacity="0.1"/>
       <g transform="translate(16, 20)">
-        <text x="0" y="0" fill="#166534" font-size="13" font-weight="700" class="font-sans">📝 Key Revision Notes • Dynamic Programming</text>
-        <text x="0" y="22" fill="#15803d" font-size="11" class="font-sans">• Optimal Substructure: Solution to problem contains optimal solutions to sub-problems.</text>
-        <text x="0" y="40" fill="#15803d" font-size="11" class="font-sans">• Overlapping Subproblems: Memoize subproblems in table instead of recalculating.</text>
-        <text x="0" y="58" fill="#15803d" font-size="11" class="font-sans">• 0/1 Knapsack recurrence: dp[i][w] = max(dp[i-1][w], val[i-1] + dp[i-1][w-wt[i-1]]).</text>
-        <text x="0" y="78" fill="#166534" font-size="11" font-weight="600" class="font-sans">💡 Exam Tip: Always draw the 2D tabulation grid for full step marking.</text>
+        <text x="0" y="0" fill="#ffffff" font-size="13" font-weight="700" class="font-sans">📝 Key Revision Notes • Dynamic Programming</text>
+        <text x="0" y="22" fill="#a1a1aa" font-size="11" class="font-sans">• Optimal Substructure: Solution to problem contains optimal solutions to sub-problems.</text>
+        <text x="0" y="40" fill="#a1a1aa" font-size="11" class="font-sans">• Overlapping Subproblems: Memoize subproblems in table instead of recalculating.</text>
+        <text x="0" y="58" fill="#a1a1aa" font-size="11" class="font-sans">• 0/1 Knapsack recurrence: dp[i][w] = max(dp[i-1][w], val[i-1] + dp[i-1][w-wt[i-1]]).</text>
+        <text x="0" y="78" fill="#34d399" font-size="11" font-weight="600" class="font-sans">💡 Exam Tip: Always draw the 2D tabulation grid for full step marking.</text>
       </g>
     </g>
   </g>

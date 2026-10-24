@@ -19,9 +19,11 @@ const Results = () => {
   }
 
   const getImportanceColor = (importance) => {
-    if (importance === "Very Important") return "text-red-500";
-    if (importance === "Important") return "text-yellow-500";
-    return "text-blue-500";
+    if (importance === "Very Important")
+      return "text-red-400 bg-red-500/10 border border-red-500/20";
+    if (importance === "Important")
+      return "text-amber-400 bg-amber-500/10 border border-amber-500/20";
+    return "text-neutral-300 bg-white/5 border border-white/10";
   };
 
   const getImportanceIcon = (importance) => {
@@ -37,27 +39,27 @@ const Results = () => {
         <div className="fixed top-8 left-8 z-20">
           <button
             onClick={() => navigate("/start")}
-            className="flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-sm rounded-full text-white hover:bg-black/60 transition-all group"
+            className="flex items-center gap-2 px-4 py-2 bg-neutral-900/80 border border-white/10 backdrop-blur-md rounded-full text-white hover:bg-neutral-800 transition-all group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span>Back</span>
+            <span className="text-xs font-medium">Back</span>
           </button>
         </div>
 
-        {/* A4 Portrait Document */}
-        <div className="w-full max-w-[210mm] bg-white shadow-2xl animate-fadeIn">
+        {/* Dark Mode Document */}
+        <div className="w-full max-w-[210mm] bg-neutral-900/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl animate-fadeIn text-white">
           {/* Error Display */}
           {error && (
-            <div className="p-16 text-gray-900 min-h-[297mm] flex items-center justify-center">
+            <div className="p-16 min-h-[297mm] flex items-center justify-center">
               <div className="text-center">
                 <div className="text-6xl mb-6">❌</div>
-                <h1 className="text-4xl font-bold text-red-600 mb-4">
+                <h1 className="text-3xl font-bold text-red-400 mb-4">
                   Analysis Failed
                 </h1>
-                <p className="text-gray-700 text-lg mb-6">{error}</p>
+                <p className="text-neutral-400 text-sm mb-6 max-w-md mx-auto">{error}</p>
                 <button
                   onClick={() => navigate("/start")}
-                  className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full font-semibold hover:scale-105 transition-all"
+                  className="px-8 py-3 bg-white text-black hover:bg-neutral-200 rounded-full font-semibold hover:scale-105 transition-all shadow-md"
                 >
                   Try Again
                 </button>
@@ -67,13 +69,13 @@ const Results = () => {
 
           {/* Full Document Content */}
           {analysis && (
-            <div className="px-12 py-10 text-gray-900">
+            <div className="px-8 md:px-12 py-10">
               {/* Header */}
-              <div className="text-center mb-12 pb-8 border-b-2 border-gray-200">
-                <h1 className="text-4xl font-bold text-gray-900 mb-3">
+              <div className="text-center mb-10 pb-6 border-b border-white/10">
+                <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">
                   PYQ Analysis Report
                 </h1>
-                <p className="text-gray-600">
+                <p className="text-neutral-400 text-xs">
                   Generated on{" "}
                   {new Date().toLocaleDateString("en-US", {
                     weekday: "long",
@@ -86,31 +88,31 @@ const Results = () => {
 
               {/* Summary Section */}
               <div className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                   📊 Summary
                 </h2>
-                <div className="grid grid-cols-3 gap-4 bg-gray-50 p-6 rounded-lg">
+                <div className="grid grid-cols-3 gap-4 bg-white/[0.02] border border-white/10 p-6 rounded-xl">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600">
+                    <div className="text-3xl font-bold text-white">
                       {analysis.summary?.totalQuestions || 0}
                     </div>
-                    <div className="text-sm text-gray-600 mt-1">
+                    <div className="text-xs text-neutral-400 mt-1 uppercase tracking-wider">
                       Total Questions
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-purple-600">
+                    <div className="text-3xl font-bold text-neutral-200">
                       {analysis.topics?.length || 0}
                     </div>
-                    <div className="text-sm text-gray-600 mt-1">
+                    <div className="text-xs text-neutral-400 mt-1 uppercase tracking-wider">
                       Topics Identified
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-green-600">
+                    <div className="text-3xl font-bold text-red-400">
                       {analysis.summary?.mostRepeatedTopics?.length || 0}
                     </div>
-                    <div className="text-sm text-gray-600 mt-1">
+                    <div className="text-xs text-red-400/80 mt-1 uppercase tracking-wider">
                       High Priority
                     </div>
                   </div>
@@ -119,16 +121,16 @@ const Results = () => {
 
               {/* Focus Areas */}
               {analysis.summary?.mostRepeatedTopics && (
-                <div className="mb-10 p-6 bg-green-50 rounded-lg border-l-4 border-green-500">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-green-600" />
+                <div className="mb-10 p-6 bg-emerald-500/[0.06] border border-emerald-500/20 rounded-xl">
+                  <h3 className="text-md font-semibold text-emerald-400 mb-3 flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-emerald-400" />
                     Key Focus Areas
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {analysis.summary.mostRepeatedTopics.map((topic, i) => (
                       <span
                         key={i}
-                        className="px-4 py-2 bg-green-600 text-white rounded-full text-sm font-medium"
+                        className="px-3.5 py-1.5 bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 rounded-full text-xs font-medium"
                       >
                         {topic}
                       </span>
@@ -140,7 +142,7 @@ const Results = () => {
               {/* Suggested Study Order */}
               {analysis.summary?.suggestedFocusOrder && (
                 <div className="mb-10">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-lg font-semibold text-white mb-4">
                     🎯 Recommended Study Order
                   </h2>
                   <ol className="space-y-2">
@@ -148,12 +150,12 @@ const Results = () => {
                       (topic, index) => (
                         <li
                           key={index}
-                          className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg"
+                          className="flex items-center gap-3 p-3 bg-white/[0.02] border border-white/5 rounded-lg"
                         >
-                          <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                          <span className="flex-shrink-0 w-6 h-6 bg-white text-black rounded-full flex items-center justify-center font-bold text-xs">
                             {index + 1}
                           </span>
-                          <span className="text-gray-900 font-medium">
+                          <span className="text-neutral-200 font-medium text-sm">
                             {topic}
                           </span>
                         </li>
@@ -165,23 +167,23 @@ const Results = () => {
 
               {/* Detailed Topic Analysis */}
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                <h2 className="text-lg font-semibold text-white mb-6">
                   📚 Detailed Topic Analysis
                 </h2>
                 <div className="space-y-8">
                   {analysis.topics?.map((topic, index) => (
                     <div
                       key={index}
-                      className="border-l-4 border-gray-300 pl-6 py-2"
+                      className="border-l-2 border-white/20 pl-6 py-2"
                     >
                       {/* Topic Header */}
                       <div className="mb-4">
                         <div className="flex items-start justify-between mb-2">
-                          <h3 className="text-xl font-bold text-gray-900">
+                          <h3 className="text-lg font-bold text-white">
                             {topic.name}
                           </h3>
                           <div className="flex gap-2">
-                            <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
+                            <span className="px-3 py-1 bg-white/10 border border-white/10 text-neutral-200 rounded-full text-xs font-semibold">
                               {topic.frequency}x
                             </span>
                             <span
@@ -198,10 +200,10 @@ const Results = () => {
                       {topic.questionPatterns &&
                         topic.questionPatterns.length > 0 && (
                           <div className="mb-4">
-                            <h4 className="font-semibold text-gray-900 mb-2">
+                            <h4 className="font-semibold text-neutral-300 text-xs mb-2 uppercase tracking-wider">
                               Common Question Patterns:
                             </h4>
-                            <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                            <ul className="list-disc list-inside space-y-1 text-neutral-400 text-xs">
                               {topic.questionPatterns.map((pattern, i) => (
                                 <li key={i}>{pattern}</li>
                               ))}
@@ -211,13 +213,13 @@ const Results = () => {
 
                       {/* Notes */}
                       {topic.notes && (
-                        <div className="space-y-3 bg-gray-50 p-4 rounded-lg">
+                        <div className="space-y-3 bg-white/[0.02] border border-white/10 p-4 rounded-xl">
                           {topic.notes.definition && (
                             <div>
-                              <h4 className="font-semibold text-gray-900 mb-1 text-sm">
+                              <h4 className="font-semibold text-neutral-300 mb-1 text-xs uppercase tracking-wider">
                                 Definition:
                               </h4>
-                              <p className="text-gray-700 text-sm italic">
+                              <p className="text-neutral-300 text-xs italic">
                                 {topic.notes.definition}
                               </p>
                             </div>
@@ -226,10 +228,10 @@ const Results = () => {
                           {topic.notes.keyPoints &&
                             topic.notes.keyPoints.length > 0 && (
                               <div>
-                                <h4 className="font-semibold text-gray-900 mb-1 text-sm">
+                                <h4 className="font-semibold text-neutral-300 mb-1 text-xs uppercase tracking-wider">
                                   Key Points:
                                 </h4>
-                                <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                                <ul className="list-disc list-inside space-y-1 text-neutral-300 text-xs">
                                   {topic.notes.keyPoints.map((point, i) => (
                                     <li key={i}>{point}</li>
                                   ))}
@@ -240,10 +242,10 @@ const Results = () => {
                           {topic.notes.examples &&
                             topic.notes.examples.length > 0 && (
                               <div>
-                                <h4 className="font-semibold text-gray-900 mb-1 text-sm">
+                                <h4 className="font-semibold text-neutral-300 mb-1 text-xs uppercase tracking-wider">
                                   Examples:
                                 </h4>
-                                <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                                <ul className="list-disc list-inside space-y-1 text-neutral-300 text-xs">
                                   {topic.notes.examples.map((example, i) => (
                                     <li key={i}>{example}</li>
                                   ))}
@@ -253,11 +255,11 @@ const Results = () => {
 
                           {topic.notes.examTips &&
                             topic.notes.examTips.length > 0 && (
-                              <div>
-                                <h4 className="font-semibold text-gray-900 mb-1 text-sm flex items-center gap-1">
+                              <div className="pt-1 border-t border-white/5">
+                                <h4 className="font-semibold text-emerald-400 mb-1 text-xs flex items-center gap-1">
                                   💡 Exam Tips:
                                 </h4>
-                                <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                                <ul className="list-disc list-inside space-y-1 text-emerald-300/90 text-xs">
                                   {topic.notes.examTips.map((tip, i) => (
                                     <li key={i}>{tip}</li>
                                   ))}
@@ -272,7 +274,7 @@ const Results = () => {
               </div>
 
               {/* Footer */}
-              <div className="mt-12 pt-6 border-t-2 border-gray-200 text-center text-gray-500 text-sm">
+              <div className="mt-12 pt-6 border-t border-white/10 text-center text-neutral-500 text-xs">
                 <p>End of Analysis Report</p>
               </div>
             </div>

@@ -106,15 +106,15 @@ const PYQAnalyzer = () => {
               onDrop={handleDrop}
               className={`flex-1 border-2 border-dashed rounded-2xl p-8 flex flex-col items-center justify-center transition-all min-h-[400px] ${
                 dragActive
-                  ? "border-blue-500 bg-blue-500/10"
-                  : "border-white/20 hover:border-white/40 bg-white/5"
+                  ? "border-white bg-white/10"
+                  : "border-white/15 hover:border-white/30 bg-white/[0.03]"
               }`}
             >
               <Upload className="w-16 h-16 mb-4 text-white/60" />
               <h3 className="text-xs font-semibold mb-2 text-white">
                 Drop PDFs here
               </h3>
-              <p className="text-gray-400 text-xs mb-4 text-center">
+              <p className="text-neutral-400 text-xs mb-4 text-center">
                 or click to browse
               </p>
               <input
@@ -127,7 +127,7 @@ const PYQAnalyzer = () => {
               />
               <label
                 htmlFor="file-upload"
-                className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-xs cursor-pointer transition-all"
+                className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-xs text-white cursor-pointer transition-all border border-white/10"
               >
                 Select Files
               </label>
@@ -138,9 +138,9 @@ const PYQAnalyzer = () => {
                   {files.map((file, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-2 px-3 py-2 bg-white/10 rounded-lg group"
+                      className="flex items-center gap-2 px-3 py-2 bg-white/10 rounded-lg group border border-white/5"
                     >
-                      <FileText className="w-4 h-4 text-blue-400" />
+                      <FileText className="w-4 h-4 text-neutral-300" />
                       <span className="text-sm text-white flex-1 truncate">
                         {file.name}
                       </span>
@@ -148,7 +148,7 @@ const PYQAnalyzer = () => {
                         onClick={() => removeFile(idx)}
                         className="opacity-0 group-hover:opacity-100 transition-opacity"
                       >
-                        <X className="w-4 h-4 text-gray-400 hover:text-red-400" />
+                        <X className="w-4 h-4 text-neutral-400 hover:text-white" />
                       </button>
                     </div>
                   ))}
@@ -166,7 +166,7 @@ const PYQAnalyzer = () => {
               value={textInput}
               onChange={(e) => setTextInput(e.target.value)}
               placeholder="Paste your questions here...&#10;&#10;Example:&#10;1. What is machine learning?&#10;2. Explain neural networks.&#10;3. Describe backpropagation."
-              className="flex-1 min-h-100 bg-white/5 border-2 border-white/20 hover:border-white/40 rounded-2xl p-6 text-white text-xs placeholder-gray-500 resize-none focus:outline-none focus:border-blue-500 transition-all"
+              className="flex-1 min-h-100 bg-white/[0.03] border-2 border-white/15 hover:border-white/30 rounded-2xl p-6 text-white text-xs placeholder-neutral-500 resize-none focus:outline-none focus:border-white transition-all"
             />
           </div>
         </div>
@@ -178,8 +178,8 @@ const PYQAnalyzer = () => {
             disabled={loading || (files.length === 0 && !textInput.trim())}
             className={`px-8 py-3 rounded-full font-semibold text-sm transition-all flex items-center gap-3 ${
               loading || (files.length === 0 && !textInput.trim())
-                ? "bg-white/10 text-gray-400 cursor-not-allowed"
-                : "bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:scale-105 hover:shadow-2xl"
+                ? "bg-white/5 text-neutral-500 border border-white/10 cursor-not-allowed"
+                : "bg-white text-black hover:bg-neutral-200 active:scale-95 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]"
             }`}
           >
             {loading ? (

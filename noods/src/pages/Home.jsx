@@ -37,11 +37,11 @@ function Home() {
             className="inline-flex items-center gap-2 px-6 py-3 
                                                 bg-white/5 backdrop-blur-sm rounded-full 
                                                 border border-white/10
-                                                cursor-pointer hover:bg-white/10 hover:scale-105
+                                                cursor-pointer hover:bg-white/10 hover:border-white/20 hover:scale-105
                                                 transition-all duration-300"
           >
-            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-sm text-gray-400">Click Start to begin</span>
+            <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+            <span className="text-sm text-neutral-300">Click Start to begin</span>
           </div>
         </div>
       </div>

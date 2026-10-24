@@ -1,16 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 260" width="100%" height="100%">
   <defs>
+    <!-- Dark Background -->
     <linearGradient id="wfBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b0f19"/>
-      <stop offset="100%" stop-color="#030712"/>
+      <stop offset="0%" stop-color="#050507"/>
+      <stop offset="100%" stop-color="#000000"/>
     </linearGradient>
-    <linearGradient id="box1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e293b"/>
-      <stop offset="100%" stop-color="#0f172a"/>
+    <linearGradient id="boxDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.01"/>
     </linearGradient>
-    <linearGradient id="boxGemini" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#312e81"/>
-      <stop offset="100%" stop-color="#1e1b4b"/>
+    <linearGradient id="boxHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.03"/>
     </linearGradient>
   </defs>
 
@@ -19,67 +20,68 @@
     .font-mono { font-family: ui-monospace, Menlo, Monaco, monospace; }
   </style>
 
-  <rect width="1000" height="260" rx="12" fill="url(#wfBg)" stroke="#ffffff" stroke-opacity="0.1"/>
+  <!-- Canvas Background (Monochrome) -->
+  <rect width="1000" height="260" rx="14" fill="url(#wfBg)" stroke="#ffffff" stroke-opacity="0.12"/>
 
   <!-- Step 1: Input -->
   <g transform="translate(40, 45)">
-    <rect width="190" height="170" rx="10" fill="url(#box1)" stroke="#38bdf8" stroke-opacity="0.4"/>
-    <text x="95" y="32" fill="#38bdf8" font-size="12" font-weight="700" class="font-sans" text-anchor="middle">1. INPUT INGESTION</text>
-    <circle cx="95" cy="72" r="22" fill="#0284c7" fill-opacity="0.2"/>
+    <rect width="190" height="170" rx="10" fill="url(#boxDark)" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="95" y="32" fill="#ffffff" font-size="11" font-weight="700" letter-spacing="1" class="font-sans" text-anchor="middle">1. INPUT INGESTION</text>
+    <circle cx="95" cy="72" r="22" fill="#ffffff" fill-opacity="0.06"/>
     <text x="95" y="78" font-size="20" text-anchor="middle">📄</text>
-    <text x="95" y="116" fill="#f8fafc" font-size="13" font-weight="600" class="font-sans" text-anchor="middle">Multi-PDF or Text</text>
-    <text x="95" y="136" fill="#94a3b8" font-size="11" class="font-sans" text-anchor="middle">Digital or scanned papers</text>
-    <text x="95" y="152" fill="#94a3b8" font-size="11" class="font-sans" text-anchor="middle">Single or batch upload</text>
+    <text x="95" y="116" fill="#f4f4f5" font-size="13" font-weight="600" class="font-sans" text-anchor="middle">Multi-PDF or Text</text>
+    <text x="95" y="136" fill="#a1a1aa" font-size="11" class="font-sans" text-anchor="middle">Digital or scanned papers</text>
+    <text x="95" y="152" fill="#71717a" font-size="11" class="font-sans" text-anchor="middle">Single or batch upload</text>
   </g>
 
-  <!-- Arrow 1 -->
+  <!-- Arrow 1 (Monochrome) -->
   <g transform="translate(245, 120)">
-    <line x1="0" y1="0" x2="25" y2="0" stroke="#64748b" stroke-width="2" stroke-dasharray="4 2"/>
-    <polygon points="25,-5 35,0 25,5" fill="#64748b"/>
+    <line x1="0" y1="0" x2="25" y2="0" stroke="#52525b" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <polygon points="25,-4 33,0 25,4" fill="#a1a1aa"/>
   </g>
 
   <!-- Step 2: Extraction -->
   <g transform="translate(290, 45)">
-    <rect width="190" height="170" rx="10" fill="url(#box1)" stroke="#a855f7" stroke-opacity="0.4"/>
-    <text x="95" y="32" fill="#c084fc" font-size="12" font-weight="700" class="font-sans" text-anchor="middle">2. OCR &amp; PARSING</text>
-    <circle cx="95" cy="72" r="22" fill="#9333ea" fill-opacity="0.2"/>
+    <rect width="190" height="170" rx="10" fill="url(#boxDark)" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="95" y="32" fill="#ffffff" font-size="11" font-weight="700" letter-spacing="1" class="font-sans" text-anchor="middle">2. OCR &amp; PARSING</text>
+    <circle cx="95" cy="72" r="22" fill="#ffffff" fill-opacity="0.06"/>
     <text x="95" y="78" font-size="20" text-anchor="middle">🔍</text>
-    <text x="95" y="116" fill="#f8fafc" font-size="13" font-weight="600" class="font-sans" text-anchor="middle">EasyOCR / PyMuPDF</text>
-    <text x="95" y="136" fill="#94a3b8" font-size="11" class="font-sans" text-anchor="middle">Selectable text extraction</text>
-    <text x="95" y="152" fill="#94a3b8" font-size="11" class="font-sans" text-anchor="middle">Neural OCR for images</text>
+    <text x="95" y="116" fill="#f4f4f5" font-size="13" font-weight="600" class="font-sans" text-anchor="middle">EasyOCR / PyMuPDF</text>
+    <text x="95" y="136" fill="#a1a1aa" font-size="11" class="font-sans" text-anchor="middle">Selectable text extraction</text>
+    <text x="95" y="152" fill="#71717a" font-size="11" class="font-sans" text-anchor="middle">Neural OCR for images</text>
   </g>
 
-  <!-- Arrow 2 -->
+  <!-- Arrow 2 (Monochrome) -->
   <g transform="translate(495, 120)">
-    <line x1="0" y1="0" x2="25" y2="0" stroke="#64748b" stroke-width="2" stroke-dasharray="4 2"/>
-    <polygon points="25,-5 35,0 25,5" fill="#64748b"/>
+    <line x1="0" y1="0" x2="25" y2="0" stroke="#52525b" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <polygon points="25,-4 33,0 25,4" fill="#a1a1aa"/>
   </g>
 
-  <!-- Step 3: AI Intelligence -->
+  <!-- Step 3: AI Intelligence (Highlighted Monochrome) -->
   <g transform="translate(540, 45)">
-    <rect width="190" height="170" rx="10" fill="url(#boxGemini)" stroke="#818cf8" stroke-width="1.5"/>
-    <text x="95" y="32" fill="#818cf8" font-size="12" font-weight="700" class="font-sans" text-anchor="middle">3. AI ANALYSIS</text>
-    <circle cx="95" cy="72" r="22" fill="#6366f1" fill-opacity="0.25"/>
+    <rect width="190" height="170" rx="10" fill="url(#boxHighlight)" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5"/>
+    <text x="95" y="32" fill="#ffffff" font-size="11" font-weight="700" letter-spacing="1" class="font-sans" text-anchor="middle">3. AI ANALYSIS</text>
+    <circle cx="95" cy="72" r="22" fill="#ffffff" fill-opacity="0.12"/>
     <text x="95" y="78" font-size="20" text-anchor="middle">✨</text>
-    <text x="95" y="116" fill="#f8fafc" font-size="13" font-weight="600" class="font-sans" text-anchor="middle">Gemini 2.5 Flash</text>
-    <text x="95" y="136" fill="#c7d2fe" font-size="11" class="font-sans" text-anchor="middle">Topic modeling &amp; clustering</text>
-    <text x="95" y="152" fill="#c7d2fe" font-size="11" class="font-sans" text-anchor="middle">Frequency &amp; weightage rank</text>
+    <text x="95" y="116" fill="#ffffff" font-size="13" font-weight="700" class="font-sans" text-anchor="middle">Gemini 2.5 Flash</text>
+    <text x="95" y="136" fill="#d4d4d8" font-size="11" class="font-sans" text-anchor="middle">Topic clustering &amp; patterns</text>
+    <text x="95" y="152" fill="#a1a1aa" font-size="11" class="font-sans" text-anchor="middle">Frequency &amp; weightage rank</text>
   </g>
 
-  <!-- Arrow 3 -->
+  <!-- Arrow 3 (Monochrome) -->
   <g transform="translate(745, 120)">
-    <line x1="0" y1="0" x2="25" y2="0" stroke="#64748b" stroke-width="2" stroke-dasharray="4 2"/>
-    <polygon points="25,-5 35,0 25,5" fill="#64748b"/>
+    <line x1="0" y1="0" x2="25" y2="0" stroke="#52525b" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <polygon points="25,-4 33,0 25,4" fill="#a1a1aa"/>
   </g>
 
   <!-- Step 4: Insights & Output -->
   <g transform="translate(790, 45)">
-    <rect width="170" height="170" rx="10" fill="url(#box1)" stroke="#34d399" stroke-opacity="0.4"/>
-    <text x="85" y="32" fill="#34d399" font-size="12" font-weight="700" class="font-sans" text-anchor="middle">4. SMART OUTPUT</text>
-    <circle cx="85" cy="72" r="22" fill="#059669" fill-opacity="0.2"/>
+    <rect width="170" height="170" rx="10" fill="url(#boxDark)" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="85" y="32" fill="#ffffff" font-size="11" font-weight="700" letter-spacing="1" class="font-sans" text-anchor="middle">4. SMART OUTPUT</text>
+    <circle cx="85" cy="72" r="22" fill="#ffffff" fill-opacity="0.06"/>
     <text x="85" y="78" font-size="20" text-anchor="middle">📊</text>
-    <text x="85" y="116" fill="#f8fafc" font-size="13" font-weight="600" class="font-sans" text-anchor="middle">Report &amp; Notes</text>
-    <text x="85" y="136" fill="#94a3b8" font-size="11" class="font-sans" text-anchor="middle">Priority classification</text>
-    <text x="85" y="152" fill="#94a3b8" font-size="11" class="font-sans" text-anchor="middle">High-yield revision notes</text>
+    <text x="85" y="116" fill="#f4f4f5" font-size="13" font-weight="600" class="font-sans" text-anchor="middle">Report &amp; Notes</text>
+    <text x="85" y="136" fill="#a1a1aa" font-size="11" class="font-sans" text-anchor="middle">Priority classification</text>
+    <text x="85" y="152" fill="#71717a" font-size="11" class="font-sans" text-anchor="middle">High-yield revision notes</text>
   </g>
 </svg>

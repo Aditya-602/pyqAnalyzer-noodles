@@ -80,7 +80,7 @@ const DynamicIsland = ({ forceExpanded = false }) => {
             >
               {/* Active indicator */}
               {activeTab === tab.id && (
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/30 to-purple-500/30 animate-pulse" />
+                <div className="absolute inset-0 rounded-full bg-white/15 border border-white/20" />
               )}
               <span className="relative z-10">{tab.label}</span>
             </button>

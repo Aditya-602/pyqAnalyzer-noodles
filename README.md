@@ -10,25 +10,25 @@
 
   <p align="center">
     <a href="https://github.com/Aditya-602/pyqAnalyzer-noodles/blob/main/LICENSE">
-      <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License" />
+      <img src="https://img.shields.io/badge/License-MIT-000000?style=for-the-badge&logo=opensourceinitiative&logoColor=white" alt="MIT License" />
     </a>
     <a href="https://react.dev">
-      <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 19" />
+      <img src="https://img.shields.io/badge/React-19-000000?style=for-the-badge&logo=react&logoColor=white" alt="React 19" />
     </a>
     <a href="https://vite.dev">
-      <img src="https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite 7" />
+      <img src="https://img.shields.io/badge/Vite-7-000000?style=for-the-badge&logo=vite&logoColor=white" alt="Vite 7" />
     </a>
     <a href="https://tailwindcss.com">
-      <img src="https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS v4" />
+      <img src="https://img.shields.io/badge/Tailwind_CSS-v4-000000?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS v4" />
     </a>
     <a href="https://python.org">
-      <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.9+" />
+      <img src="https://img.shields.io/badge/Python-3.9+-000000?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.9+" />
     </a>
     <a href="https://flask.palletsprojects.com">
       <img src="https://img.shields.io/badge/Flask-3.0+-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
     </a>
     <a href="https://ai.google.dev">
-      <img src="https://img.shields.io/badge/Gemini_AI-2.5_Flash-8E75B2?style=for-the-badge&logo=google&logoColor=white" alt="Google Gemini" />
+      <img src="https://img.shields.io/badge/Gemini_AI-2.5_Flash-000000?style=for-the-badge&logo=google&logoColor=white" alt="Google Gemini" />
     </a>
   </p>
 

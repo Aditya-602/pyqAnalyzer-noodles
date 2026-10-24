@@ -1,53 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="100%" height="100%">
   <defs>
-    <!-- Background Gradients -->
+    <!-- Monochrome Dark Background -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050508"/>
-      <stop offset="50%" stop-color="#0a0a14"/>
-      <stop offset="100%" stop-color="#030305"/>
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="50%" stop-color="#08080a"/>
+      <stop offset="100%" stop-color="#030303"/>
     </linearGradient>
 
-    <!-- Aurora Radial Glows -->
-    <radialGradient id="auroraGreen" cx="25%" cy="35%" r="60%">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.35"/>
-      <stop offset="50%" stop-color="#064e3b" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#050508" stop-opacity="0"/>
+    <!-- Subtle White / Slate Radial Aurora Waves -->
+    <radialGradient id="auroraWhite" cx="50%" cy="15%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="40%" stop-color="#71717a" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="auroraPurple" cx="75%" cy="40%" r="65%">
-      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.4"/>
-      <stop offset="55%" stop-color="#3b0764" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#050508" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="auroraCyan" cx="50%" cy="85%" r="55%">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.28"/>
-      <stop offset="60%" stop-color="#083344" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#050508" stop-opacity="0"/>
+    <radialGradient id="auroraGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="60%" stop-color="#27272a" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Text Gradients -->
+    <!-- Text Gradients (Pure White to Zinc) -->
     <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="45%" stop-color="#f3f4f6"/>
-      <stop offset="70%" stop-color="#cbd5e1"/>
-      <stop offset="100%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#e4e4e7"/>
+      <stop offset="100%" stop-color="#a1a1aa"/>
     </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="50%" stop-color="#818cf8"/>
-      <stop offset="100%" stop-color="#c084fc"/>
-    </linearGradient>
-    <linearGradient id="pillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.03"/>
+    <linearGradient id="dividerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- Filter Shadows -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="16" result="blur"/>
+    <!-- Shadow & Glow -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
-    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    <filter id="pillShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#000000" flood-opacity="0.8"/>
     </filter>
   </defs>
 
@@ -56,79 +46,80 @@
     .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
   </style>
 
-  <!-- Background -->
+  <!-- Background Canvas -->
   <rect width="1200" height="480" fill="url(#bgGrad)"/>
-  <rect width="1200" height="480" fill="url(#auroraGreen)"/>
-  <rect width="1200" height="480" fill="url(#auroraPurple)"/>
-  <rect width="1200" height="480" fill="url(#auroraCyan)"/>
+  <rect width="1200" height="480" fill="url(#auroraWhite)"/>
+  <rect width="1200" height="480" fill="url(#auroraGlow)"/>
 
-  <!-- Subtle grid dots -->
-  <g opacity="0.08" fill="#ffffff">
-    <circle cx="100" cy="80" r="1.5"/><circle cx="200" cy="80" r="1.5"/><circle cx="300" cy="80" r="1.5"/><circle cx="400" cy="80" r="1.5"/>
-    <circle cx="800" cy="80" r="1.5"/><circle cx="900" cy="80" r="1.5"/><circle cx="1000" cy="80" r="1.5"/><circle cx="1100" cy="80" r="1.5"/>
-    <circle cx="100" cy="180" r="1.5"/><circle cx="1100" cy="180" r="1.5"/><circle cx="100" cy="380" r="1.5"/><circle cx="1100" cy="380" r="1.5"/>
+  <!-- Minimalist Grid Dots -->
+  <g opacity="0.07" fill="#ffffff">
+    <circle cx="120" cy="80" r="1.5"/><circle cx="240" cy="80" r="1.5"/><circle cx="360" cy="80" r="1.5"/>
+    <circle cx="840" cy="80" r="1.5"/><circle cx="960" cy="80" r="1.5"/><circle cx="1080" cy="80" r="1.5"/>
+    <circle cx="120" cy="200" r="1.5"/><circle cx="1080" cy="200" r="1.5"/>
+    <circle cx="120" cy="340" r="1.5"/><circle cx="1080" cy="340" r="1.5"/>
+    <circle cx="120" cy="420" r="1.5"/><circle cx="240" cy="420" r="1.5"/><circle cx="360" cy="420" r="1.5"/>
+    <circle cx="840" cy="420" r="1.5"/><circle cx="960" cy="420" r="1.5"/><circle cx="1080" cy="420" r="1.5"/>
   </g>
 
-  <!-- Top Dynamic Island Element -->
-  <g filter="url(#softShadow)" transform="translate(450, 36)">
-    <rect width="300" height="44" rx="22" fill="#000000" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1"/>
-    <rect x="4" y="4" width="292" height="36" rx="18" fill="url(#pillGrad)"/>
-    <circle cx="24" cy="22" r="4.5" fill="#34d399"/>
-    <text x="50" y="27" fill="#9ca3af" class="font-sans" font-size="13" font-weight="500">Home</text>
-    <rect x="106" y="8" width="86" height="28" rx="14" fill="#ffffff" fill-opacity="0.12"/>
-    <text x="149" y="27" fill="#ffffff" class="font-sans" font-size="13" font-weight="600" text-anchor="middle">⚡ Start</text>
-    <text x="242" y="27" fill="#9ca3af" class="font-sans" font-size="13" font-weight="500">About</text>
+  <!-- Top Dynamic Island Pill (Black & White Dark Mode) -->
+  <g filter="url(#pillShadow)" transform="translate(440, 36)">
+    <rect width="320" height="44" rx="22" fill="#09090b" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1"/>
+    <circle cx="26" cy="22" r="3.5" fill="#ffffff" opacity="0.8"/>
+    <text x="56" y="27" fill="#a1a1aa" class="font-sans" font-size="13" font-weight="500">Home</text>
+    <rect x="115" y="8" width="90" height="28" rx="14" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="160" y="26" fill="#ffffff" class="font-sans" font-size="13" font-weight="600" text-anchor="middle">Start</text>
+    <text x="254" y="27" fill="#a1a1aa" class="font-sans" font-size="13" font-weight="500">About</text>
   </g>
 
   <!-- Center Branding: N👀DLES -->
   <g text-anchor="middle" class="font-sans">
-    <!-- Ambient Text Glow -->
-    <text x="600" y="222" font-size="88" font-weight="800" letter-spacing="12" fill="#818cf8" opacity="0.25" filter="url(#glow)">N👀DLES</text>
+    <!-- Ambient White Glow Under Typography -->
+    <text x="600" y="222" font-size="88" font-weight="900" letter-spacing="12" fill="#ffffff" opacity="0.12" filter="url(#softGlow)">N👀DLES</text>
     <text x="600" y="220" font-size="88" font-weight="900" letter-spacing="12" fill="url(#titleGrad)">N👀DLES</text>
 
-    <!-- Glowing Accent Divider -->
-    <rect x="480" y="244" width="240" height="2.5" rx="1.25" fill="url(#accentGrad)" opacity="0.85"/>
+    <!-- Monochrome Glowing Divider -->
+    <rect x="470" y="244" width="260" height="1.5" fill="url(#dividerGrad)"/>
 
     <!-- Subtitle & Value Proposition -->
-    <text x="600" y="286" font-size="22" font-weight="400" fill="#e2e8f0" letter-spacing="0.5">
+    <text x="600" y="286" font-size="21" font-weight="500" fill="#f4f4f5" letter-spacing="0.5">
       AI-Powered Previous Year Questions (PYQ) Analyzer
     </text>
-    <text x="600" y="318" font-size="15" font-weight="300" fill="#94a3b8" letter-spacing="0.3">
-      Upload Question Papers • Extract Topic Frequency • Generate Exam Revision Notes
+    <text x="600" y="318" font-size="14" font-weight="300" fill="#a1a1aa" letter-spacing="0.3">
+      Multi-PDF OCR Extraction • Syllabus Topic Modeling • High-Yield Revision Notes
     </text>
   </g>
 
-  <!-- Feature Badge Chips -->
-  <g transform="translate(190, 375)">
+  <!-- Monochrome Feature Badge Chips -->
+  <g transform="translate(195, 375)">
     <!-- Chip 1 -->
     <g transform="translate(0, 0)">
-      <rect width="180" height="40" rx="20" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
-      <circle cx="24" cy="20" r="5" fill="#38bdf8"/>
-      <text x="40" y="25" fill="#f1f5f9" class="font-sans" font-size="13" font-weight="500">Gemini 2.5 Flash</text>
+      <rect width="185" height="40" rx="20" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/>
+      <circle cx="24" cy="20" r="4" fill="#ffffff"/>
+      <text x="42" y="25" fill="#f4f4f5" class="font-sans" font-size="13" font-weight="500">Gemini 2.5 Flash</text>
     </g>
 
     <!-- Chip 2 -->
-    <g transform="translate(205, 0)">
-      <rect width="195" height="40" rx="20" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
-      <circle cx="24" cy="20" r="5" fill="#a855f7"/>
-      <text x="40" y="25" fill="#f1f5f9" class="font-sans" font-size="13" font-weight="500">EasyOCR &amp; PyMuPDF</text>
+    <g transform="translate(200, 0)">
+      <rect width="195" height="40" rx="20" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/>
+      <circle cx="24" cy="20" r="4" fill="#ffffff"/>
+      <text x="42" y="25" fill="#f4f4f5" class="font-sans" font-size="13" font-weight="500">EasyOCR &amp; PyMuPDF</text>
     </g>
 
     <!-- Chip 3 -->
-    <g transform="translate(425, 0)">
-      <rect width="195" height="40" rx="20" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
-      <circle cx="24" cy="20" r="5" fill="#f59e0b"/>
-      <text x="40" y="25" fill="#f1f5f9" class="font-sans" font-size="13" font-weight="500">Topic Frequency &amp; Rank</text>
+    <g transform="translate(410, 0)">
+      <rect width="200" height="40" rx="20" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/>
+      <circle cx="24" cy="20" r="4" fill="#ffffff"/>
+      <text x="42" y="25" fill="#f4f4f5" class="font-sans" font-size="13" font-weight="500">Frequency &amp; Ranking</text>
     </g>
 
     <!-- Chip 4 -->
-    <g transform="translate(645, 0)">
-      <rect width="175" height="40" rx="20" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
-      <circle cx="24" cy="20" r="5" fill="#10b981"/>
-      <text x="40" y="25" fill="#f1f5f9" class="font-sans" font-size="13" font-weight="500">Dynamic Island UI</text>
+    <g transform="translate(625, 0)">
+      <rect width="185" height="40" rx="20" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/>
+      <circle cx="24" cy="20" r="4" fill="#ffffff"/>
+      <text x="42" y="25" fill="#f4f4f5" class="font-sans" font-size="13" font-weight="500">Dynamic Island UI</text>
     </g>
   </g>
 
-  <!-- Border Frame -->
+  <!-- Outer Frame -->
   <rect x="0.5" y="0.5" width="1199" height="479" rx="16" fill="none" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
 </svg>
